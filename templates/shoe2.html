@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shoe Catalog</title>
+    <style>
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+        display: inline-block;
+      }
+      .card img {
+        max-width: 100%;
+      }
+      .card h2 {
+        font-size: 20px;
+        margin: 5px 0;
+      }
+      .card p {
+        font-size: 16px;
+        margin: 5px 0;
+      }
+      .card button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shoe Catalog</h1>
+    {% for shoe in shoes %}
+      <div class="card">
+        <img src="{{ shoe.image }}" alt="{{ shoe.name }}">
+        <h2>{{ shoe.name }}</h2>
+        <p>{{ shoe.description }}</p>
+        <p><strong>Price:</strong> {{ shoe.price }}</p>
+        <button>Add to Cart</button>
+      </div>
+    {% endfor %}
+  </body>
+</html>
